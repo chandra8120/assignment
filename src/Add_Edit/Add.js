@@ -1,9 +1,9 @@
 import { Button, TextField } from "@mui/material";
 import React, { useContext, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import { AuthContext } from "./context/AuthProvider";
+import { AuthContext } from "../context/AuthProvider";
 import { addDoc, collection, doc, setDoc } from "firebase/firestore";
-import { db } from "./Email_Auth/FirebaseConfig";
+import { db } from "../Email_Auth/FirebaseConfig";
 
 const Add = () => {
   const { user } = useContext(AuthContext);
@@ -15,7 +15,7 @@ const Add = () => {
   };
 
   const addUserHandler = async () => {
-    console.log(" at add handler :: ",user.uid,)
+    console.log(" at add handler :: ", user.uid);
     await addDoc(collection(db, "users", user.uid, "members"), {
       ...newUser,
     });
@@ -24,9 +24,18 @@ const Add = () => {
 
   return (
     <div>
-      
-      <div style={{display:'flex',flexDirection:"column",justifyContent:"center",alignItems:"center",textAlign:'center',flexWrap:"wrap",gap:10,border:"2px solid green"}}>
-      <h2>Add New User</h2>
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "center",
+          alignItems: "center",
+          textAlign: "center",
+          flexWrap: "wrap",
+          gap: 10,
+        }}
+      >
+        <h2>Add New User</h2>
         <div>
           <TextField
             placeholder="name"
@@ -51,7 +60,7 @@ const Add = () => {
             onChange={handleUser}
           />
         </div>
-        <Button  variant="contained" onClick={addUserHandler}>
+        <Button variant="contained" onClick={addUserHandler}>
           Add User
         </Button>
       </div>

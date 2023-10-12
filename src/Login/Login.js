@@ -21,8 +21,6 @@ import { FcGoogle } from "react-icons/fc";
 import { auth } from "../Email_Auth/FirebaseConfig";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../context/AuthProvider";
-// import img1 from "./Group 688.svg";
-// import img2 from "./Vector.svg";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -52,7 +50,7 @@ const Login = () => {
       })
       .catch((error) => {
         const errorCode = error.code;
-        alert(" Enter correct details  "+errorCode)
+        alert(" Enter correct details  " + errorCode);
       });
     setData({ email: "", password: "" });
   };
@@ -67,7 +65,9 @@ const Login = () => {
 
       <div className="second-image">
         <div className="form-in">
-          <div style={{ color: "#009EE2" }}>Welcome to Login</div>
+          <div style={{ fontStyle: "initial", fontSize: "25px" }}>
+            Welcome to Login
+          </div>
           <div
             style={{
               display: "flex",
@@ -129,7 +129,6 @@ const Login = () => {
           </div>
           <div style={{ display: "flex", gap: 20 }}>
             <div style={{ display: "flex" }}>
-              {/* <input type="radio" style={{ fontSize: 2, cursor: "pointer" }} /> */}
               <p style={{ fontSize: "70%", cursor: "pointer" }}>
                 Dont have an account ?
               </p>
@@ -140,10 +139,6 @@ const Login = () => {
                 SignUp
               </Button>
             </div>
-
-            {/* <p style={{ fontSize: "70%", color: "blue", cursor: "pointer" }}>
-              Forgot your password ?
-            </p> */}
           </div>
           <Button
             onClick={signIn}
@@ -165,19 +160,6 @@ const Login = () => {
             <AppleIcon />
           </div>
         </div>
-
-        {/* <div
-          style={{
-            width: "20%",
-            height: "20%",
-            display: "flex",
-            gap: "290px",
-            justifyContent: "center",
-          }}
-        >
-          <img style={{ width: "100%", height: "100%" }} src={img2} />
-          <img style={{ width: "80%", height: "100%" }} src={img1} />
-        </div> */}
       </div>
     </div>
   );

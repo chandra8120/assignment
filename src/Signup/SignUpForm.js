@@ -78,7 +78,7 @@ const SignUpForm = () => {
       })
       .catch((error) => {
         console.log("error :: ", error);
-        alert("enter correct input details"+error)
+        alert("enter correct input details" + error);
       });
   };
 
@@ -98,260 +98,259 @@ const SignUpForm = () => {
   };
 
   return (
-
     <div className="main">
-<div className="whole-data">
+      <div className="whole-data">
+        <div className="first-div">
+          <img style={{ width: "100%", height: "100%" }} src={logo} alt="img" />
+        </div>
 
-      <div className="first-div">
-        <img style={{ width: "100%", height: "100%" }} src={logo} alt="img" />
-      </div>
-
-      <div className="form-container">
-
-        <div
-          className="in-form">
-          <div style={{ color: "#FFFFFF", fontSize: "20px" }}> Registration Form </div>
-          <form autoComplete="off" onSubmit={handleSubmit}>
-            <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
-              <div style={{ color: "white" }}>
-                <TextField
-                  id="standard-textarea"
-                  label="Name"
-                  variant="standard"
-                  placeholder="Name"
-                  name="name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  InputLabelProps={{
-                    style: { color: "white" },
-                  }}
-                  InputProps={{
-                    style: { color: "white" },
-                    placeholderStyle: { color: "red" },
-                  }}
-                />
-              </div>
-
-              <div>
-                <TextField
-                  id="standard-textarea"
-                  label="Email"
-                  placeholder="Email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  InputLabelProps={{
-                    style: { color: "white" },
-                  }}
-                  InputProps={{
-                    style: { color: "white" },
-                    placeholderStyle: { color: "red" },
-                  }}
-                  variant="standard"
-                />
-              </div>
-
-              <div>
-                <TextField
-                  type="password"
-                  id="standard-textarea"
-                  label="Password"
-                  placeholder="Enter Password"
-                  name="password"
-                  value={formData.password}
-                  onChange={handleChange}
-                  InputLabelProps={{
-                    style: { color: "white" },
-                  }}
-                  InputProps={{
-                    style: { color: "white" },
-                    placeholderStyle: { color: "red" },
-                  }}
-                  variant="standard"
-                />
-              </div>
-
-              <div>
-                <TextField
-                  id="standard-textarea"
-                  label="Phone Number"
-                  variant="standard"
-                  placeholder="Phone number"
-                  value={formData.phone}
-                  onChange={handleChange}
-                  InputLabelProps={{
-                    style: { color: "white" },
-                  }}
-                  InputProps={{
-                    style: { color: "white" },
-                    placeholderStyle: { color: "red" },
-                  }}
-                  name="phone"
-                />
-              </div>
+        <div className="form-container">
+          <div className="in-form">
+            <div style={{ color: "#FFFFFF", fontSize: "20px" }}>
+              {" "}
+              Registration Form{" "}
             </div>
-            <div>
-              <FormControl>
-                <RadioGroup
-                  row
-                  aria-labelledby="demo-row-radio-buttons-group-label"
-                  name="row-radio-buttons-group"
-                >
-                  <div>
-                    <label>Gender :</label>
-                    <label>Male</label>
-                    <input type="radio" />
-                    <label>Female</label>
-                    <input type="radio" />
-                    <label>Others</label>
-                    <input type="radio" />
-                  </div>
-                </RadioGroup>
-              </FormControl>
-            </div>
-            <div
-              style={{
-                display: "flex",
-                flexDirection: "column",
-              }}
-            >
-              <label>How did you hear about this?</label>
-              <div>
-                <div>
-                  <label>
-                    <input
-                      type="checkbox"
-                      name="howDidYouHear"
-                      value="LinkedIn"
-                      checked={formData.howDidYouHear.includes("LinkedIn")}
-                      onChange={handleChange}
-                    />
-                    LinkedIn
-                  </label>
-                </div>
-
-                <div>
-                  <label>
-                    <input
-                      type="checkbox"
-                      name="howDidYouHear"
-                      value="Friends"
-                      checked={formData.howDidYouHear.includes("Friends")}
-                      onChange={handleChange}
-                    />
-                    Friends
-                  </label>
-                </div>
-
-                <div>
-                  <label>
-                    <input
-                      type="checkbox"
-                      name="howDidYouHear"
-                      value="Job Portal"
-                      checked={formData.howDidYouHear.includes("Job Portal")}
-                      onChange={handleChange}
-                    />
-                    Job Portal
-                  </label>
-                </div>
-                <div>
-                  <label>
-                    <input
-                      type="checkbox"
-                      name="howDidYouHear"
-                      value="Others"
-                      checked={formData.howDidYouHear.includes("Others")}
-                      onChange={handleChange}
-                    />
-                    Others
-                  </label>
-                </div>
-              </div>
-            </div>
-
-            <div>
-              <Box sx={{ minWidth: 120 }}>
-                <FormControl fullWidth>
-                  <InputLabel
+            <form autoComplete="off" onSubmit={handleSubmit}>
+              <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
+                <div style={{ color: "white" }}>
+                  <TextField
+                    id="standard-textarea"
+                    label="Name"
                     variant="standard"
-                    htmlFor="uncontrolled-native"
-                    sx={{
-                      color: "white",
-                      fontFamily: "bold",
-                      fontSize: "25px",
+                    placeholder="Name"
+                    name="name"
+                    value={formData.name}
+                    onChange={handleChange}
+                    InputLabelProps={{
+                      style: { color: "white" },
                     }}
-                  >
-                    City
-                  </InputLabel>
-                  <NativeSelect
-                    defaultValue={30}
-                    inputProps={{
-                      name: "city",
-                      id: "uncontrolled-native",
+                    InputProps={{
+                      style: { color: "white" },
+                      placeholderStyle: { color: "red" },
                     }}
+                  />
+                </div>
+
+                <div>
+                  <TextField
+                    id="standard-textarea"
+                    label="Email"
+                    placeholder="Email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    InputLabelProps={{
+                      style: { color: "white" },
+                    }}
+                    InputProps={{
+                      style: { color: "white" },
+                      placeholderStyle: { color: "red" },
+                    }}
+                    variant="standard"
+                  />
+                </div>
+
+                <div>
+                  <TextField
+                    type="password"
+                    id="standard-textarea"
+                    label="Password"
+                    placeholder="Enter Password"
+                    name="password"
+                    value={formData.password}
+                    onChange={handleChange}
+                    InputLabelProps={{
+                      style: { color: "white" },
+                    }}
+                    InputProps={{
+                      style: { color: "white" },
+                      placeholderStyle: { color: "red" },
+                    }}
+                    variant="standard"
+                  />
+                </div>
+
+                <div>
+                  <TextField
+                    id="standard-textarea"
+                    label="Phone Number"
+                    variant="standard"
+                    placeholder="Phone number"
+                    value={formData.phone}
+                    onChange={handleChange}
+                    InputLabelProps={{
+                      style: { color: "white" },
+                    }}
+                    InputProps={{
+                      style: { color: "white" },
+                      placeholderStyle: { color: "red" },
+                    }}
+                    name="phone"
+                  />
+                </div>
+              </div>
+              <div>
+                <FormControl>
+                  <RadioGroup
+                    row
+                    aria-labelledby="demo-row-radio-buttons-group-label"
+                    name="row-radio-buttons-group"
                   >
-                    <option value={formData.city}>Mumbai</option>
-                    <option value={formData.city}>Pune</option>
-                    <option value={formData.city}>Ahmedabad</option>
-                  </NativeSelect>
+                    <div>
+                      <label>Gender :</label>
+                      <label>Male</label>
+                      <input type="radio" />
+                      <label>Female</label>
+                      <input type="radio" />
+                      <label>Others</label>
+                      <input type="radio" />
+                    </div>
+                  </RadioGroup>
                 </FormControl>
-              </Box>
-            </div>
-
-            <div>
-              <label>State:</label>
-              <input
-                style={{
-                  borderRadius: "10px",
-                  width: "50%",
-                  height: "20px",
-                  backgroundColor: "#0507A3",
-                  color: "white",
-                }}
-                type="text"
-                name="state"
-                value={formData.state}
-                onChange={handleChange}
-              />
-            </div>
-
-            <div>
-              <Button
-                onClick={handleSubmit}
-                sx={{
-                  border: "1px solid black",
-                  color: "black",
-                  width: "100%",
-                  // background: "linear-gradient(to right, #3FC6D6, #1916D6)",
-                  background: "#003465",
-                  textTransform: "none",
-                  color: "#FFFFFF",
-                }}
-              >
-                Save
-              </Button>
+              </div>
               <div
                 style={{
                   display: "flex",
-                  gap: 4,
-                  fontSize: "13px",
-                  justifyContent: "center",
-                  alignItems: "center",
+                  flexDirection: "column",
                 }}
               >
-                <p>Already have an account?</p>
-                <Button
-                  onClick={()=>navigate("/login")}
-                  sx={{ textTransform: "none", color: "white" }}
-                >
-                  Sign In
-                </Button>
+                <label>How did you hear about this?</label>
+                <div>
+                  <div>
+                    <label>
+                      <input
+                        type="checkbox"
+                        name="howDidYouHear"
+                        value="LinkedIn"
+                        checked={formData.howDidYouHear.includes("LinkedIn")}
+                        onChange={handleChange}
+                      />
+                      LinkedIn
+                    </label>
+                  </div>
+
+                  <div>
+                    <label>
+                      <input
+                        type="checkbox"
+                        name="howDidYouHear"
+                        value="Friends"
+                        checked={formData.howDidYouHear.includes("Friends")}
+                        onChange={handleChange}
+                      />
+                      Friends
+                    </label>
+                  </div>
+
+                  <div>
+                    <label>
+                      <input
+                        type="checkbox"
+                        name="howDidYouHear"
+                        value="Job Portal"
+                        checked={formData.howDidYouHear.includes("Job Portal")}
+                        onChange={handleChange}
+                      />
+                      Job Portal
+                    </label>
+                  </div>
+                  <div>
+                    <label>
+                      <input
+                        type="checkbox"
+                        name="howDidYouHear"
+                        value="Others"
+                        checked={formData.howDidYouHear.includes("Others")}
+                        onChange={handleChange}
+                      />
+                      Others
+                    </label>
+                  </div>
+                </div>
               </div>
-            </div>
-          </form>
+
+              <div>
+                <Box sx={{ minWidth: 120 }}>
+                  <FormControl fullWidth>
+                    <InputLabel
+                      variant="standard"
+                      htmlFor="uncontrolled-native"
+                      sx={{
+                        color: "white",
+                        fontFamily: "bold",
+                        fontSize: "25px",
+                      }}
+                    >
+                      City
+                    </InputLabel>
+                    <NativeSelect
+                      defaultValue={30}
+                      inputProps={{
+                        name: "city",
+                        id: "uncontrolled-native",
+                      }}
+                    >
+                      <option value={formData.city}>Mumbai</option>
+                      <option value={formData.city}>Pune</option>
+                      <option value={formData.city}>Ahmedabad</option>
+                    </NativeSelect>
+                  </FormControl>
+                </Box>
+              </div>
+
+              <div>
+                <label>State:</label>
+                <input
+                  style={{
+                    borderRadius: "10px",
+                    width: "50%",
+                    height: "20px",
+                    backgroundColor: "#0507A3",
+                    color: "white",
+                  }}
+                  type="text"
+                  name="state"
+                  value={formData.state}
+                  onChange={handleChange}
+                />
+              </div>
+
+              <div>
+                <Button
+                  onClick={handleSubmit}
+                  sx={{
+                    border: "1px solid black",
+                    color: "black",
+                    width: "100%",
+
+                    background: "#003465",
+                    textTransform: "none",
+                    color: "#FFFFFF",
+                  }}
+                >
+                  Save
+                </Button>
+                <div
+                  style={{
+                    display: "flex",
+                    gap: 4,
+                    fontSize: "13px",
+                    justifyContent: "center",
+                    alignItems: "center",
+                  }}
+                >
+                  <p>Already have an account?</p>
+                  <Button
+                    onClick={() => navigate("/login")}
+                    sx={{ textTransform: "none", color: "white" }}
+                  >
+                    Sign In
+                  </Button>
+                </div>
+              </div>
+            </form>
+          </div>
         </div>
-      </div>
       </div>
     </div>
   );

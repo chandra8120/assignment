@@ -14,13 +14,17 @@ import {
   DialogContent,
   DialogContentText,
   DialogTitle,
+  FormControl,
   IconButton,
+  InputLabel,
+  MenuItem,
+  Select,
   Slide,
+  TextField,
 } from "@mui/material";
 import { Add, Delete, Edit } from "@mui/icons-material";
 import { AuthContext } from "../../context/AuthProvider";
 import { useNavigate } from "react-router-dom";
-
 
 const Transition = React.forwardRef(function Transition(props, ref) {
   return <Slide direction="up" ref={ref} {...props} />;
@@ -28,7 +32,7 @@ const Transition = React.forwardRef(function Transition(props, ref) {
 
 const Home = () => {
   const navigate = useNavigate();
-  const { users, setUsers, user,signOut } = useContext(AuthContext);
+  const { users, setUsers, user, signOut } = useContext(AuthContext);
   const [selectedUserId, setSaelectedUserId] = useState();
   const [open, setOpen] = useState(false);
 
@@ -62,14 +66,12 @@ const Home = () => {
   const filterAndSearchUsers = () => {
     let filtered = [...users];
 
-
     if (filter === "A-Z") {
       filtered = filtered.sort((a, b) => a.name.localeCompare(b.name));
     } else if (filter === "Z-A") {
       filtered = filtered.sort((a, b) => b.name.localeCompare(a.name));
     }
 
-    
     if (searchQuery) {
       filtered = filtered.filter(
         (user) =>
@@ -101,10 +103,8 @@ const Home = () => {
     handleDialogue();
   };
 
- 
-
   return (
-    <div>
+    <div className="main-container">
       <div
         style={{
           display: "flex",
@@ -122,7 +122,7 @@ const Home = () => {
             right: "20px",
             bottom: "20px",
             background: "blue",
-            border:"2px solid geen",
+            border: "2px solid geen",
             borderRadius: "50%",
             display: "flex",
             justifyContent: "center",
@@ -130,44 +130,47 @@ const Home = () => {
           }}
         >
           <IconButton onClick={() => navigate("/add")}>
-            <AddIcon sx={{color:"#fff"}}  />
+            <AddIcon sx={{ color: "#fff" }} />
           </IconButton>
         </div>
 
-        <div style={{ border: "2px solid green", width: "100%" }}>
-          <div style={{ display: "flex", gap: 20 }}>
-          
-            {/* <div>
-              <button
-                style={{
-                  color: "white",
-                  background: "#2AD5F0",
-                  borderRadius: "20px",
-                  height: "30px",
-                }}
-                onClick={() => signout()}
-              >
-                Sign Out
-              </button>
-            </div> */}
+        <div style={{ width: "100%" }}>
+          <div style={{ display: "flex", gap: 20 }}></div>
 
-          </div>
-
-          <div style={{ border: "2px solid red", display: "flex" }}>
-            <div>
-              <label>Filter: </label>
-              <select value={filter} onChange={handleFilterChange}>
-                <option value="A-Z">A-Z</option>
-                <option value="Z-A">Z-A</option>
-              </select>
+          <div
+            style={{
+              display: "flex",
+              gap: 850,
+              justifyContent: "center",
+              alignItems: "center",
+              textAlign: "center",
+            }}
+          >
+            <div className="filter">
+              <FormControl sx={{ m: 1, minWidth: 110 }}>
+                <InputLabel id="demo-simple-select-autowidth-label">
+                  Filter
+                </InputLabel>
+                <Select
+                  labelId="demo-simple-select-autowidth-label"
+                  id="demo-simple-select-autowidth"
+                  label="Filter"
+                >
+                  <MenuItem value="A-z">A-Z</MenuItem>
+                  <MenuItem value="Z-A">Z-A</MenuItem>
+                </Select>
+              </FormControl>
             </div>
 
             <div>
-              <label>Search: </label>
-              <input
+              <TextField
+                input
                 type="text"
                 value={searchQuery}
                 onChange={handleSearchChange}
+                id="outlined-basic"
+                label="Search"
+                variant="outlined"
               />
             </div>
           </div>
@@ -175,20 +178,25 @@ const Home = () => {
       </div>
       <div>
         {filteredUsers.length === 0 ? (
-          <h2 style={{textAlign:'center'}}>No data found !!</h2>
+          <h2 style={{ textAlign: "center" }}>No data found !!</h2>
         ) : (
           <ul className="ul">
             {filteredUsers.map((user) => (
               <li className="li" key={user.id}>
-                <Card sx={{ maxWidth: 345 ,width:"80%"}}>
+                <Card sx={{ maxWidth: 345, width: "80%" }}>
                   <CardMedia
                     sx={{ height: 140 }}
                     image="https://img.goodfon.com/wallpaper/big/f/e1/tsvet-forma-fon-230.jpg"
                     title="green iguana"
                   />
 
-                  <CardContent >
-                    <Typography gutterBottom variant="h5" component="div" sx={{textAlign:"center"}}>
+                  <CardContent>
+                    <Typography
+                      gutterBottom
+                      variant="h5"
+                      component="div"
+                      sx={{ textAlign: "center" }}
+                    >
                       <div>{user.name}</div>
                       <div>{user.email}</div>
                       <div>{user.phone}</div>
@@ -207,12 +215,9 @@ const Home = () => {
                             handleDialogue();
                           }}
                           startIcon={<Delete />}
-                        >
-                        
-                        </Button>
+                        ></Button>
                       </div>
                     </Typography>
-                   
                   </CardContent>
                 </Card>
               </li>
@@ -239,10 +244,6 @@ const Home = () => {
           <Button onClick={deleteHandler}>Yes</Button>
         </DialogActions>
       </Dialog>
-
-
-    
-
     </div>
   );
 };

@@ -5,8 +5,8 @@ import Home from "../pages/Home";
 import RequireAuth from "./RequireAuth";
 import Login from "../Login/Login";
 import SignUpForm from "../Signup/SignUpForm";
-import Edit from "../Edit";
-import Add from "../Add";
+import Edit from "../Add_Edit/Edit";
+import Add from "../Add_Edit/Add";
 import DrawerAppBar from "./Design";
 
 const Routing = () => {

@@ -1,0 +1,15 @@
+.li{
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    min-width:300px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.ul{
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    min-width:300px
+}

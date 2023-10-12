@@ -1,0 +1,29 @@
+{
+    "users": [
+      {
+        "id": 1,
+        "name": "Satheesh",
+        "email": "Sat@mail.com",
+        "phone": "9876543212"
+      },
+      {
+        "id": 2,
+        "name": "John",
+        "email": "john@mail.com",
+        "phone": "9087654321"
+      },
+      {
+        "id": 3,
+        "name": "Robert",
+        "email": "robert@mail.com",
+        "phone": "1234567890"
+      },
+      {
+        "id": 4,
+        "name": "Mani",
+        "email": "mani@mail.com",
+        "phone": "6315735175"
+      }
+    ]
+  }
+  
